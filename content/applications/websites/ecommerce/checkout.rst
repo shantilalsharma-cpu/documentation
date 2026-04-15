@@ -201,6 +201,21 @@ addresses are identical), and click :guilabel:`Confirm` to proceed to the next s
      selected, the customer can :guilabel:`Choose a pick-up point`, provided several pick-up points
      are available.
 
+.. _ecommerce/checkout/address-validation:
+
+Automatic address validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the :doc:`Google Places API </applications/general/integrations/address_autocomplete>` to ensure
+that partner delivery addresses are valid. Addresses are automatically validated as the user types
+during checkout.
+
+To enable this feature, you must first configure the :ref:`Google Places API
+<address_autocomplete/places-api-configuration>`. Then, go to the :menuselection:`Website -->
+Configuration --> Settings`, navigate to the :guilabel:`General` section, and make sure that
+:guilabel:`Google Address Validation` is enabled. Finally, insert your :ref:`Google Places API key
+<address_autocomplete/generate_api_key>` in the :guilabel:`API Key` field.
+
 .. _ecommerce/checkout/extra_step:
 
 Extra info
