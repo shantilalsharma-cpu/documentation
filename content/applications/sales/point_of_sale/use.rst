@@ -4,6 +4,9 @@
 Workflow
 ========
 
+This section covers the essential daily operations of the Point of Sale, from initial setup and
+configuration to managing sales transactions, customer records, and receipt/invoice handling.
+
 .. _pos/use/create-pos:
 
 Create a POS
@@ -58,8 +61,9 @@ Settings`. Then, open the :guilabel:`Point of Sale` dropdown menu and select the
 Open the POS register
 =====================
 
-Once the POS is fully :doc:`configured <hardware_network>`, open the register to access the POS
-interface, then follow these steps:
+The POS register is divided into three sections: the product grid to select items, the cart to
+visualize the items added to the order, and the numpad for order actions. Once the POS is fully
+:doc:`configured <hardware_network>`, follow these steps to access the register:
 
 #. Go to :menuselection:`Point of Sale --> Dashboard`.
 #. On the relevant POS card, click :guilabel:`Open Register`.
@@ -69,7 +73,7 @@ interface, then follow these steps:
 
 .. note::
    - Once the register is open, the :guilabel:`Open Register` button is replaced by the
-     :guilabel:`Continue Selling` button on the POS card.
+     :guilabel:`Continue Selling` button on the :guilabel:`Dashboard's` POS card.
    - It is possible to switch between :doc:`multiple users <extra/employee_login>` from an open POS
      register, provided :ref:`multi-employee management is enabled <pos/employee_login/use>`.
 
@@ -89,13 +93,15 @@ From the POS interface header:
 - Click the :icon:`fa-bars` (:guilabel:`hamburger menu`) icon to access more advanced options, as
   well as to :ref:`close the register <pos/use/register-close>`.
 
+.. image:: use/pos-register.png
+   :alt: POS register
+
 .. _pos/use/sell:
 
 Sell products
 =============
 
-The POS register is divided into three sections: the product grid to select items, the cart to
-visualize the items added to the order, and the numpad for order actions. To make sales:
+To sell products in the :ref:`POS register <pos/use/open-register>`, follow these steps:
 
 #. Click on products to add them to the cart.
 
@@ -113,9 +119,6 @@ visualize the items added to the order, and the numpad for order actions. To mak
    with the :doc:`invoice <use/pos_invoices>` via email.
 
 To move on to the next order, click :guilabel:`New Order` on the :guilabel:`Receipt` screen.
-
-.. image:: use/pos-register.png
-   :alt: POS register
 
 .. note::
    On the :guilabel:`Payment` screen, starting to enter the amount due automatically selects the
@@ -218,8 +221,9 @@ To access an order in the register, click it, then click :guilabel:`Load Order`.
 
 .. note::
    - Paid orders can be :ref:`refunded <pos/use/refund>`.
-   - The :guilabel:`Delivery Channel` and :guilabel:`Delivery Order Status` dropdown options depend
-     on the :ref:`UrbanPiper <online_food_delivery/configuration>` setting.
+   - The :guilabel:`Delivery Channel` and :guilabel:`Delivery Order Status` dropdown options are
+     only visible if the :ref:`UrbanPiper <online_food_delivery/configuration>` setting is
+     installed.
 
 .. tip::
    - To define the number of orders visible on a page, click `1-x / x`. Enter a number lower than
@@ -261,7 +265,7 @@ Once the return is validated, a corresponding credit note is generated, referenc
    Alternatively, refunds can be processed by:
 
    - Clicking the :icon:`fa-ellipsis-v` (:guilabel:`vertical ellipsis`) icon in the POS register,
-     then :guilabel:`Refund`. Select and order, enter the number of items to refund, then click
+     then :guilabel:`Refund`. Select an order, enter the number of items to refund, then click
      :guilabel:`Refund`.
    - Selecting products from the POS register, clicking :guilabel:`Qty` to enter the quantity to
      refund, then clicking :guilabel:`+/-` to set it as a negative quantity. Continue with the
@@ -283,14 +287,15 @@ Notes allow for extra information to be added to specific products in an order. 
 of notes: :ref:`internal notes <pos/use/internal-notes>` and :ref:`customer notes
 <pos/use/customer-notes>`.
 
-.. _pos/use/note-models:
+.. tip::
+   If the same content is frequently used, configure a note model to save time. To create or edit
+   note models, go to :menuselection:`Point of Sale --> Configuration --> Note Models`, click
+   :guilabel:`New` or click the relevant note model, then complete or edit the :guilabel:`Name`
+   column.
 
-Note models
------------
-
-If the same content is frequently used, configure a note model to save time. To create or edit note
-models, go to :menuselection:`Point of Sale --> Configuration --> Note Models`, click
-:guilabel:`New` or click the relevant note model, then complete or edit the :guilabel:`Name` column.
+.. note::
+   Any notes added to a product from the :ref:`POS register <pos/use/open-register>` are displayed
+   on the :doc:`customer display <../point_of_sale/hardware_network/customer_display>`.
 
 .. _pos/use/internal-notes:
 
@@ -306,8 +311,7 @@ To add or edit an internal note from the POS register, follow these steps:
 
    - The entire order: Ensure no item is selected in the cart, then click :guilabel:`Note`.
    - A specific item: Select the item in the cart, then click :guilabel:`Note`.
-#. Add or modify the note's content in the popover or select a previously configured :ref:`note
-   model <pos/use/note-models>`.
+#. Add or modify the note's content in the popover or select a previously configured note model.
 #. Click :guilabel:`Apply`.
 
 .. _pos/use/customer-notes:
@@ -327,8 +331,7 @@ To add or edit a customer note from the POS register, follow these steps:
      (:guilabel:`vertical ellipsis`) icon, then click :guilabel:`Customer Note`.
    - A specific item: Select the item in the cart, click the :icon:`fa-ellipsis-v`
      (:guilabel:`vertical ellipsis`) icon, then click :guilabel:`Customer Note`.
-#. Add or modify the note's content in the popover or select a previously configured :ref:`note
-   model <pos/use/note-models>`.
+#. Add or modify the note's content in the popover or select a previously configured note model.
 #. Click :guilabel:`Apply`.
 
 .. note::
@@ -388,8 +391,8 @@ Click :guilabel:`Close Register` to close the register and post accounting entri
    - After specifying the number of coins and bills, the computed amount is set in the
      :guilabel:`Cash Count` field, and the :guilabel:`Closing details` are specified in the
      :guilabel:`Closing note` section.
-   - When the money counted does **not** match the expected amount, a :guilabel:`Payments
-     Difference window opens automatically after clicking :guilabel:`Close Register`. Selecting
+   - When the money counted does *not* match the expected amount, a :guilabel:`Payments Difference`
+     window opens automatically after clicking :guilabel:`Close Register`. Selecting
      :guilabel:`Proceed Anyway` validates the session and automatically posts the discrepancy to the
      designated cash difference journal.
    - Closing the register of a :doc:`restaurant <restaurant>` POS when orders are still in draft
