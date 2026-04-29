@@ -202,14 +202,11 @@ Install Odoo as a local proxy on your computer
 
 An Odoo local server works as a bridge between your computer and your Odoo database hosted online.
 
-Download the Odoo Community installer from the page https://www.odoo.com/page/download and start the
-installation on your computer.
+Download the Odoo **Virtual IoT** installer from the page https://www.odoo.com/page/download and
+start the installation on your computer. Select :guilabel:`Odoo IoT` as the type of install.
 
-Select :guilabel:`Odoo IoT` as the type of install.
-
-.. image:: egypt/install-odoo-local-proxy.png
-   :align: center
-   :alt: Selection of "Odoo IoT" during the installation of Odoo Community.
+.. image:: egypt/install-odoo-iot.png
+   :alt: Selection of "Odoo IoT" during the installation of Odoo Virtual IoT.
 
 .. note::
    This installation of Odoo only works as a server and does not install any Odoo apps on your
