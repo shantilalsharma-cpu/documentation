@@ -26,8 +26,8 @@ default. This package includes a standard chart of accounts already configured a
 country's regulations. You can use it directly or set it according to your company's needs.
 
 To create a new account, go to :menuselection:`Accounting --> Configuration --> Chart of Accounts`,
-click :guilabel:`Create`, and fill in (at the minimum) the required fields
-(:guilabel:`Code, Account Name, Type`).
+click :guilabel:`Create`, and fill in (at the minimum) the required fields (:guilabel:`Code, Account
+Name, Type`).
 
 .. warning::
    It is not possible to modify the **fiscal localization** of a company once a journal entry has
@@ -94,12 +94,17 @@ corresponding type from the following list:
 | Other         | Other       | Off-Balance Sheet       | Transactions not displayed on the balance sheet or profit and loss report                                       |
 +---------------+-------------+-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
+.. note::
+   Different expense accounts may be created based on the installed :doc:`fiscal localization
+   package <../../fiscal_localizations>`. Check the various linked expense accounts with their
+   corresponding asset models, as some may depend on localization settings.
+
 Assets
 ~~~~~~
 
-Some **account types** can **automate** the creation of :ref:`asset <assets-automation>` entries.
-To **automate** entries, click :guilabel:`View` on an account line and go to the
-:guilabel:`Automation` tab.
+Some **account types** can **automate** the creation of :ref:`asset <assets-automation>` entries. To
+**automate** entries, click :guilabel:`View` on an account line and go to the :guilabel:`Automation`
+tab.
 
 You have three choices for the :guilabel:`Automation` tab:
 
@@ -112,8 +117,8 @@ You have three choices for the :guilabel:`Automation` tab:
 Default taxes
 -------------
 
-In the :guilabel:`View` menu of an account, select a **default tax** to be applied when this
-account is chosen for a product sale or purchase.
+In the :guilabel:`View` menu of an account, select a **default tax** to be applied when this account
+is chosen for a product sale or purchase.
 
 .. _chart-of-account/tags:
 
@@ -148,9 +153,9 @@ that you must enter the same code prefix in both :guilabel:`From` and :guilabel:
 .. image:: chart_of_accounts/account-groups.png
    :alt: Account groups creation.
 
-To display your **Trial Balance** report with your account groups, go to
-:menuselection:`Accounting --> Reporting --> Trial Balance`, then open the :guilabel:`Options` menu
-and select :guilabel:`Hierarchy and Subtotals`.
+To display your **Trial Balance** report with your account groups, go to :menuselection:`Accounting
+--> Reporting --> Trial Balance`, then open the :guilabel:`Options` menu and select
+:guilabel:`Hierarchy and Subtotals`.
 
 .. image:: chart_of_accounts/chart-of-accounts-groups.png
    :alt: Account Groups in the Trial Balance in Odoo Accounting
